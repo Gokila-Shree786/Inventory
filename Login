@@ -1,0 +1,9 @@
+public class Test {
+	static WebDriver d;
+	public static void main(String[] args) {
+		System.setproperty("webdriver.chrome.driver","C:\\Selenium Webdriver\\Chrome driver\\chromedriver.exe");
+		d = new ChromeDriver();
+		d.get("http://demo.cdev.co.in/");
+		System.out.println(d.gettitle());
+		d.quit();
+	}
