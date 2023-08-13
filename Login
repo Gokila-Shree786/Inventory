@@ -1,9 +1,18 @@
-public class Test {
+package inventory;
+
+public class InventoryScript {
 	static WebDriver d;
-	public static void main(String[] args) {
-		System.setproperty("webdriver.chrome.driver","C:\\Selenium Webdriver\\Chrome driver\\chromedriver.exe");
-		d = new ChromeDriver();
-		d.get("http://demo.cdev.co.in/");
-		System.out.println(d.gettitle());
+	public static void main(String[] args) throws InterruptedException {
+		   System.setProperty("webdriver.chrome.driver","C:\\Selenium Webdriver\\Chrome driver\\chromedriver.exe");
+		d=new ChromeDriver();
+		d.manage().window().maximize();
+		d.get("http://demo.cdev.co.in/login");
+		Thread.sleep(200);
+		d.findElement(By.xpath("/html/body/app-root/app-root/app-login/div/div/form/div[2]/div[1]/div/input")).sendKeys("admin@gmail.com");
+		d.findElement(By.xpath("//input[@type='password']")).sendKeys("admin@123");
+		d.findElement(By.xpath("//button[text()=' Login ']")).click();
 		d.quit();
+
 	}
+
+}
